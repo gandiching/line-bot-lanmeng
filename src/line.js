@@ -40,17 +40,23 @@ export async function replyToLine(replyToken, messages, channelAccessToken) {
   }
 }
 
-export function textMessage(text) {
+export function textMessage(text, options = {}) {
+  const quickReplyItems = [
+    quickReplyText("初階", "初階 Open Water"),
+    quickReplyText("進階", "進階 AOW"),
+    quickReplyText("船潛", "船潛"),
+    quickReplyText("聯絡", "營業時間")
+  ];
+
+  if (options.bookingFormUrl) {
+    quickReplyItems.unshift(quickReplyUri("填表單", options.bookingFormUrl));
+  }
+
   return {
     type: "text",
     text: String(text).slice(0, 4900),
     quickReply: {
-      items: [
-        quickReplyText("初階", "初階 Open Water"),
-        quickReplyText("進階", "進階 AOW"),
-        quickReplyText("船潛", "船潛"),
-        quickReplyText("聯絡", "營業時間")
-      ]
+      items: quickReplyItems
     }
   };
 }
@@ -62,6 +68,17 @@ function quickReplyText(label, text) {
       type: "message",
       label,
       text
+    }
+  };
+}
+
+function quickReplyUri(label, uri) {
+  return {
+    type: "action",
+    action: {
+      type: "uri",
+      label,
+      uri
     }
   };
 }

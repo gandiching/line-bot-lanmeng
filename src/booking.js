@@ -16,8 +16,11 @@ export function detectCourse(text) {
   return "未指定";
 }
 
-export function buildBookingPrompt(course = "課程") {
-  return `可以的，我先幫您留下${course === "未指定" ? "課程" : course}諮詢資訊。\n\n請您回覆以下資料，教練會再確認安排：\n姓名：\n電話：\n想預約的課程：\n方便上課或聯絡的時間：`;
+export function buildBookingPrompt(course = "課程", bookingFormUrl = "") {
+  const courseText = course === "未指定" ? "課程" : course;
+  const formLine = bookingFormUrl ? `\n\n預約/諮詢表單：\n${bookingFormUrl}` : "";
+
+  return `可以的，我先提供${courseText}的預約/諮詢表單給您。請您填寫姓名、電話、想預約的課程與方便聯絡時間，教練會再確認安排。${formLine}`;
 }
 
 export async function sendBookingToSheet({ webhookUrl, event, text }) {

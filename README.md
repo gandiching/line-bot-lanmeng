@@ -23,7 +23,8 @@
 - 常見船潛潛點
 - 自由潛水目前資料不足時的客服引導
 - 非營業時間提醒
-- 訂課/預約意向紀錄到 Google 試算表
+- 訂課/預約意向導向 Google 表單
+- 可選：訂課/預約意向紀錄到 Google 試算表
 
 ## 需要準備
 
@@ -96,6 +97,18 @@ src/knowledge.js
 機器人會依使用者訊息和關鍵字做相似度比對，找出最適合的回覆。
 
 ## Google 試算表訂課紀錄
+
+目前預約/諮詢表單連結已設定為：
+
+```text
+https://docs.google.com/forms/d/1vmiOgRtrAc4K_u9LRhuL6_iE56sCRa41Nvs-SxyrRao/viewform
+```
+
+請提供給客人 `/viewform` 連結，不要提供 `/edit` 後台編輯連結。
+
+在 Google 表單後台可以點「回覆」→「連結到試算表」，之後所有客人填寫的資料都會自動進入試算表，方便查看與篩選。
+
+## 可選：LINE 訊息紀錄到試算表
 
 1. 建立一份 Google 試算表
 2. 點「擴充功能」→「Apps Script」

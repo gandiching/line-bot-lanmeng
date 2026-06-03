@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { buildBookingPrompt } from "../src/booking.js";
+import { business } from "../src/knowledge.js";
 import { findAnswer } from "../src/search.js";
 
 const cases = [
@@ -17,5 +19,11 @@ for (const [question, expected] of cases) {
   assert.equal(["answer", "menu", "fallback"].includes(answer.type), true, question);
   assert.equal(answer.text.includes(expected), true, `${question} should include ${expected}`);
 }
+
+assert.equal(
+  buildBookingPrompt("初階 Open Water", business.bookingFormUrl).includes("/viewform"),
+  true,
+  "booking prompt should use customer-facing Google Form URL"
+);
 
 console.log("search tests passed");

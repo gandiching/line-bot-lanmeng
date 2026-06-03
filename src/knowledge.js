@@ -3,7 +3,9 @@ export const business = {
   phone: "0928572381",
   lineId: "@bluedreamdive",
   hours: "每日 09:00-21:00",
-  timezone: "Asia/Taipei"
+  timezone: "Asia/Taipei",
+  bookingFormUrl:
+    "https://docs.google.com/forms/d/1vmiOgRtrAc4K_u9LRhuL6_iE56sCRa41Nvs-SxyrRao/viewform"
 };
 
 export const handoffText = "我會將問題轉交給教練，他們會在課後時間回覆您。";
@@ -70,4 +72,4 @@ export const knowledge = [
 ];
 
 export const menuText =
-  "您好，我是藍夢潛水 Bluedream Dive 的 AI 客服，很高興協助您。\n\n您可以輸入：\n「初階」了解 Open Water\n「進階」了解 AOW\n「船潛」了解船潛費用與潛點\n「營業時間」查看聯絡資訊\n\n我會依藍夢潛水目前提供的資料回答；若資料不足，會協助轉交教練。";
+  "您好，我是藍夢潛水 Bluedream Dive 的 AI 客服，很高興協助您。\n\n您可以輸入：\n「初階」了解 Open Water\n「進階」了解 AOW\n「船潛」了解船潛費用與潛點\n「報名」取得預約表單\n「營業時間」查看聯絡資訊\n\n我會依藍夢潛水目前提供的資料回答；若資料不足，會協助轉交教練。";

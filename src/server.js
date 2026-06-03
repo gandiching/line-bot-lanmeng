@@ -79,7 +79,10 @@ async function handleWebhook(req, res) {
 
       await replyToLine(
         event.replyToken,
-        textMessage(`${buildBookingPrompt(course)}${sheetNotice}${afterHoursNotice()}`),
+        textMessage(
+          `${buildBookingPrompt(course, business.bookingFormUrl)}${sheetNotice}${afterHoursNotice()}`,
+          { bookingFormUrl: business.bookingFormUrl }
+        ),
         channelAccessToken
       );
       continue;
