@@ -1,0 +1,13 @@
+{
+  "name": "line-bot-lanmeng",
+  "version": "1.0.0",
+  "description": "LINE Messaging API bot for Bluedream Dive knowledge base.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node test/search.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
